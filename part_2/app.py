@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from utils import *
-from classes.candidates import Candidate
 
 app = Flask(__name__)
 candidates = load_candidates_from_json()

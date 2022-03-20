@@ -24,13 +24,7 @@ def get_candidates_by_name(candidate_name):
 def get_candidates_by_skill(skill_name):
     skills = []
     for candidate in load_candidates_from_json():
-        if skill_name in candidate["skills"]:
+        candidates_skill = candidate["skills"].lower().split(", ")
+        if skill_name in candidates_skill:
             skills.append(candidate)
     return skills
-
-
-
-# - `load_candidates_from_json(path)` – возвращает список всех кандидатов
-# - `get_candidate(candidate_id)` – возвращает одного кандидата по его id
-# - `get_candidates_by_name(candidate_name)` – возвращает кандидатов по имени
-# - `get_candidates_by_skill(skill_name)` – возвращает кандидатов по навыку
